@@ -1,28 +1,5 @@
 import { Router } from "express"
-
-function textUtil(op, input) {
-  if (op === 'lowercase') {
-    return input.toLowerCase()
-
-  } else if (op === 'uppercase') {
-    return input.toUpperCase()
-
-  } else {
-    return null
-  }
-}
-
-function numberUtil(op, numbers) {
-  if (op === 'minimum') {
-    return Math.min(...numbers)
-
-  } else if (op === 'maximum') {
-    return Math.max(...numbers)
-
-  } else {
-    return null
-  }
-}
+import { textUtil, numberUtil } from "./lib.js"
 
 const routes = Router()
 
