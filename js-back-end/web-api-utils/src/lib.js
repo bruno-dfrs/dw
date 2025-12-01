@@ -1,3 +1,5 @@
+export { textUtil, numberUtil }
+
 function textUtil(op, input) {
   switch (op) {
     case "lowercase":
