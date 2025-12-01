@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>IP Table</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQt4jKk7tg8p5b0M8U6j6kp1gkcjINCA7/PPu8Cvpg0VcHB8mizD+1LpywI9kfcF" crossorigin="anonymous"></script>
+
+  <h1>IP Table</h1>
+
+  <form id="ip-form">
+    <input id="ip-input" type="text" placeholder="IP" autofocus>
+    <input id="mask-input" type="text" placeholder="Mask">
+    <input id="version-input"  type="text" placeholder="Version">
+    <button id="add-ip" type="submit">Add</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>IP</th>
+        <th>Mask</th>
+        <th>Version</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@api=http://localhost:3000/
+
+### POST lowercase
+POST {{api}}util/text/lowercase
+Content-Type: application/json
+
+{
+  "input": "Lorem Ipsum"
+}
+
+### POST uppercase
+POST {{api}}util/text/uppercase
+Content-Type: application/json
+
+{
+  "input": "Lorem Ipsum"
+}
+
+### GET minumum
+GET {{api}}util/number/minimum/?input=10,1,100
+
+### GET maximum
+GET {{api}}util/number/maximum/?input=10,1,100
