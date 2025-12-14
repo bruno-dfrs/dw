@@ -1,0 +1,38 @@
+services:
+
+  mysql:
+    container_name: mysql_c
+    image: mysql:8.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - app-tier
+    ports:
+      - 3306:3306
+    volumes:                      # mysql_data: Volume nomeado (dados persistem após container parar)
+      - mysql_data:/var/lib/mysql # Onde MySQL armazena dados DENTRO do container
+                                  # Sem volume: Se container for deletado, dados do banco somem
+  
+  adminer:
+    container_name: adminer_c
+    image: adminer:5.4.1
+    restart: always
+    networks:
+      - app-tier
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql # Nome do serviço
+  
+networks:
+  app-tier: # Nome da rede. Você escolhe.
+    driver: bridge
+
+volumes:
+  mysql_data: # Define volume nomeado (gerenciado pelo Docker)
+              # Dados sobrevivem a docker-compose down
+              # Remover: docker-compose down -v
